@@ -66,3 +66,20 @@
 
         return res
 
+    def __migrate(self, METHOD):
+        nova_driver = nova.Driver(self.cluster)
+
+        res = {"status": False}
+        if nova_driver is None:
+            res["message"] = "Get cluster for %s failed" % self.name
+            return res
+        vm_attrs = nova_driver.get_instance_attrs(self.uuid)
+        hypervisor = vm_attrs.get("hypervisor")
+        if hypervisor:
+            setattr(self, "hypervisor", hypervisor)
+
+        res = nova_driver.migrate(self, METHOD=METHOD)
+        return res
+
+    def gagag():
+        pass
