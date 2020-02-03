@@ -80,3 +80,6 @@
 
         res = nova_driver.migrate(self, METHOD=METHOD)
         return res
+
+    def gagag():
+        pass
