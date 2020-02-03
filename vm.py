@@ -60,9 +60,8 @@
             start_time=start_time, end_time=end_time, metainfo=metainfo,
             migrate_result=0 if res["status"] is True else 1)
         log.info("vm driver migrate record_res = %s" % record_res)
-        if record_res["status"] is False:
-            res["message"] = "%s %s" % (res["message"], record_res["message"]) \
-                if "message" in res.keys() else record_res["message"]
+        
+        print "hahahahaha"
 
         return res
 
