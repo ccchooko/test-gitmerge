@@ -1,4 +1,4 @@
-    @check_attributes(("operator_name"))    
+    @check_attributes(("operator_name", "other_test"))    
     def migrate(self):
         """
         迁移实例
@@ -80,3 +80,7 @@
 
         res = nova_driver.migrate(self, METHOD=METHOD)
         return res
+
+    @check_attributes(("operator_name"))
+    def live_migrate(self):
+        pass
